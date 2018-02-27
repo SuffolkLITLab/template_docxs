@@ -1,0 +1,39 @@
+Before: <input type="hidden" name="name" value="Right to Privacy"/>
+<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/RighttoPrivacynolines.docx"/>
+Q(1): Did your someone enter your property without your permission?
+A: Yes
+	Q(1.1): Alright. GOTO:2
+A: No
+	Q(1.2): You may need a different form to solve your problem.
+Q(2): Was that person your landlord, or someone working on their behalf?
+A: Yes
+	Q(2.1): Alright. GOTO:3
+A: No
+	Q(2.2): You may need a different form to solve your problem.
+Q(3): Would you like to remind your landlord that they are not allowed to enter your residence without your permission?
+A: Yes
+	Q(3.1): I can help you fill out a form for that. GOTO:tname
+A: No
+	Q(3.2): Alright, thank you for using HOMELine.
+Q(tname): What is your full name? (Ex: John Smith)
+X:
+	Q(4.1): Nice to meet you <x>tname</x>. GOTO:tstreet
+Q(tstreet): What is your street address? (Ex: 123 Main St.)
+X:
+	Q(taddress): What is the city, state, and zip code of your address? (Ex: Boston, MA, 02129)
+	X:
+		Q(lname): What is your landlord's name?
+		X:
+			Q(lstreet): What is their street address? (Ex: 123 Main St.)
+			X:
+				Q(laddress): What is the city, state, and zip code of their address? (Ex: Boston, MA, 02129)
+				X:
+					Q(5.1.1.1.1.1): Perfect. GOTO:signature
+Q(signature): To have HOMELine send a completed form for you, please type your full name below.
+X:
+	Q(6.1): Alright, the form has been mailed. GOTO:7
+Q(7): Would you like to download a copy of the form for yourself?
+A:[javascript:submit2('http://colarusso.pythonanywhere.com/','GET','','','','json_doc','_blank')] Yes
+	Q(7.1): Awesome!
+A: No
+	Q(7.2): Alright, thank you for using HOMELINE.
