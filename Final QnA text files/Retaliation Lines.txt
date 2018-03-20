@@ -71,10 +71,7 @@ A:Yes
 
 Q(tname1):What's your full name? (i.e. John Smith)
 X:
-	Q(3.1):Thanks, nice to meet you <x>tname1</x>!  GOTO:agreement
-Q(agreement):<x>tname1</x>, We are excited to work with you, please select Yes to continue. 
-A[javascript:alert('By selecting yes, you agree to the terms of service.  If you do not agree to the terms of service then please do not continue.')]: Yes.  
-	Q(response):Wonderful, I just need a bit more background information. GOTO:tstreet
+	Q(3.1):Thanks, nice to meet you <x>tname1</x>!  GOTO:tstreet
 Q(tstreet):What is your street address?  For example: "123 Main st."
 X:
 	Q(taddress):What is your city, state, and zip?  For example: "Boston, MA. 02108"
