@@ -43,26 +43,24 @@ a.menu {
 }
 </style>
 <input type="hidden" name="name" value="Neighbor Violation"/>
-<input type="hidden" name="name" value="Neighbor Violation"/>
-<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Neighbor_Violation_Form_original.docx"/>
+<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Neighbor_Violation_Form_nolines.docx"/>
 <div id="icon"></div>
-<h2 style="text-align:center;">HOME Line Letter Bot</h2>
+<h2 style="text-align:center;">Neighbor Violation Letter Bot</h2>
 <div class="menu_bar">
 	<p style="text-align:center;">
-		<a href="https://homelinemn.org/" class="menu"> Main Site </a>
-		<a href="." class="menu"> Letter Bot Terms of Service </a>
+		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
 <p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. Or...</p>
-<p>Answers the following questions to draft a form letter to your landlord asking that they [x]. Alternatively, you could download <a href="">a blank form letter</a> and fill it out yourself.</p>
+<p>Answer the following questions to draft a form letter to your landlord asking that they mitigate a violation for a neighbor. Alternatively, you could download <a href="https://homelinemn.org/wp-content/uploads/neighbor-violation.pdf" target="_blank">a blank form letter</a> and fill it out yourself.</p>
+<p>If you believe your neighbor has acted in a way which has left the premises unfit, use this Letter Bot to help create a letter to send to your landlord.</p>
 
-Q(terms): Do you agree to the <a href="" target="_blank">Letter Bot Terms of Service</a>?
+Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
 A: Yes
 	Q(1.1):GOTO:neighborvio
 A: No
 	Q(1.2):GOTO:canthelp
-A: What do they say?
-	Q(1.3): [summarize terms] GOTO:terms
 
 Q(neighborvio):Is your premises not fit for use because of an action conducted by your neighbor?
 A:No
@@ -101,48 +99,81 @@ A:No
 Q(sorry): Sorry, it does not look like we can help! 		
 Q(secondneighbor):What is the full name of the second neighbor that conducted the action that has made the premises unfit? For example: "John Smith"
 X:
-Q(secondconductdate):What date did the second neighbor conduct the violation? For example: "November 20, 2018"
-X:
-Q(secondviolation):What was the conduct your second neighbor did to make the premises unfit?
-X:
+	Q(secondconductdate):What date did the second neighbor conduct the violation? For example: "November 20, 2018"
+	X:
+		Q(secondviolation):What was the conduct your second neighbor did to make the premises unfit?
+		X:
+			Q(sweet):Thanks for that info! GOTO:how
+DOC(8):NEIGHBOR VIOLATION
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
 How would you like to proceed? 
 
 A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
-	Q(10.1): Wait a moment to see if a download starts. GOTO:didthatwork
+	Q(8.1): Wait a moment to see if a download starts. GOTO:didthatwork
 A: Email Word file to myself. 
 	Q(sendto): What is your email address? Note: if you direct this email to an address other than your own, you will have no record that it was sent, and the purpose of the email will not be clear to someone who is not expecting it. If you want to send this file to someone, it is best to email it to yourself and then forward it on. 
 	X:[javascript:submit2('https://colarusso.pythonanywhere.com/2email/','POST','','','','json_doc','_blank')]
-		Q(10.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
+		Q(8.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
 A: Email my landlord a plain-text email. 
+	DOC(8.3):
+Notice of Neighbor’s Covenant Violation
+
+<x>lname</x>
+<x>lstreet</x>
+<x>laddress</x>
+
+I, <x>tname1</x>, reside at your property located at <x>tstreet</x> <x>taddress</x>
+
+Minnesota Statute § 504B.161 requires that every landlord of residential premises, whether the lease is in writing or oral, do the following:
+
+(1) keep the premises and all common areas fit for the use intended by the parties;
+(2) keep the premises in reasonable repair during the term of the lease or license;
+(3) maintain the premises in compliance with the applicable health and safety laws of the state.
+
+Since parties to a lease or license of residential premises may not waive or modify the “covenants of habitability” imposed by this statute, the landlord must do these things regardless of any contrary lease terms (unless the tenant caused the disrepair by his or her willful, malicious, or irresponsible conduct).  
+
+I believe my premises is not fit for the use intended because of the following disturbances caused by neighbors:
+
+<x>neighborname</x>		<x>conductdate</x>			<x>violation</x>
+
+<x>secondneighbor</x>		<x>secondconductdate</x>		<x>secondviolation</x>
+
+Please remedy this situation within fourteen days.
+
+
+		<x>signature</x>			
+
+
+
 	Q(llemail): What is your landlord's email address?
 	X:
 		Q(draft): Alright, we'll draft an email. Note: This will only work if you have a default email setup on this device. If you're not sure if you do, you can go ahead and try. We'll let you choose another option if it doesn't work.
 		A[javascript:mail2(getvar('llemail'),'Neighbor Violation',doc());]: Open draft email
-			Q(10.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
+			Q(8.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
 	A: I don't know?
-		Q(10.3.2): Do you still want to open a draft email?
+		Q(8.3.2): Do you still want to open a draft email?
 		A: Yes
-			Q(10.3.2.1):GOTO:draft
+			Q(8.3.2.1):GOTO:draft
 		A: No
-			Q(10.3.2.2): Okay, back to your options. GOTO:how	
+			Q(8.3.2.2): Okay, back to your options. GOTO:how	
 
 Q(didthatwork): Did it work?
 A: Yes
-	Q(11.1): Great. GOTO:anythingelse
+	Q(9.1): Great. GOTO:anythingelse
 A: No
-	Q(11.2): Try one of the other options. GOTO:how
+	Q(9.2): Try one of the other options. GOTO:how
 
 Q(anythingelse): Is there anything else you'd like to do?
 A: Talk to a live person at HOME Line.
-	Q(12.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
+	Q(10.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
-	Q(12.2):GOTO:end
-A: Revisit my earlier options.
-	Q(12.3):GOTO:how
+	Q(10.2):GOTO:end
+A: Revisit my previous options.
+	Q(10.3):GOTO:how
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
+	Q(10.4):GOTO:anythingelse
 
-Q(end): Thank you.
+Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
-Q(canthelp): Then I'm afraid we can't help you.
-
+Q(canthelp): Then I'm afraid we can't help you. GOTO:terms

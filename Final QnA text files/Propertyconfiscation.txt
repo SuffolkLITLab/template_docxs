@@ -1,0 +1,170 @@
+Title: HOME Line Form Bot
+Author: HOME Line
+Description: 
+Before:
+<style>
+body{
+	background:white;
+	background-image: url("http://suffolklitlab.org/images/babbage.jpg");
+	background-color: #fff;
+	background-repeat: repeat-x;
+	background-position: center -120px ;
+}
+#conversation {
+	max-width:900px;
+}
+#icon {
+	z-index:2;
+	margin:45px auto 14px auto;
+	border-radius: 20px;
+	width:125px; 
+	height:75px; 
+	border: 3px solid #555;
+	background-color: #fff;
+	background-size: 100px;
+	background-position: center;
+ 	background-repeat: no-repeat;
+	background-image: url('https://homelinemn.org/wp-content/uploads/cropped-HOME-Line-logo-1.png');
+}
+.menu_bar{
+	border-top: solid 1px #888;
+	border-bottom: solid 1px #888;
+	margin:0 0 30px 0;
+}
+a.menu {
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #529ecc;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding:0 4px;
+}
+</style>
+<input type="hidden" name="name" value="Property Confiscation Form"/>
+<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Property_Confiscation_Form_(nolines.docx"/>
+<div id="icon"></div>
+<h2 style="text-align:center;">Property Return Letter Bot</h2>
+<div class="menu_bar">
+	<p style="text-align:center;">
+		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+	</p>
+</div>
+<p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
+<p>You can also answer the following questions to draft a form letter to your landlord asking that they return your property. You could download <a href="https://homelinemn.org/wp-content/uploads/demand-for-property.pdf">a blank form letter</a> and fill it out yourself as well!.</p>
+<p>If your landlord has confiscated your property and you would like it returned, use this Letter Bot to help create a letter to send to your landlord.</p>
+
+Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
+A: Yes
+	Q(1.1):GOTO:property
+A: No
+	Q(1.2):GOTO:canthelp
+
+
+Q(property):Did your landlord take your property without permission?
+A:No
+	Q(2.1):GOTO:sorry
+A:Yes
+	Q(2.2):GOTO:twentyfour
+
+Q(twentyfour):When would you like to ask to pick up your property?
+A(24 hours if the property is stored on the premises.):Twenty-four hours, not including holidays or weekends. You should use this if the property is being stored at your former residence.
+	Q(3.1):Awesome. GOTO:tname1
+A(48 hours if the property was removed and is now stored off the premises.):Forty-eight hours not including holidays or weekends. You should use this if the property was removed and is being stored somewhere else.
+	Q(3.2):Awesome. GOTO:tname1
+
+Q(tname1):What's your full name? (i.e. John Smith)
+X:
+	Q(4.1):Thanks, nice to meet you <x>tname1</x>! GOTO:tstreet
+Q(tstreet):What is your street address?  For example: "123 Main St."
+X:
+	Q(taddress):What is your city, state, and zip?  For example: "Boston, MA 02108"
+	X:
+		Q(lname):What is your landlord's full name?
+		X:
+			Q(lstreet):What is your landlord's street address?  For example: "123 Main St."
+			X:
+				Q(laddress):What is your landlord's city, state, and zip?  For example: "Boston, MA 02108"
+				X:
+					Q(weekdaypickup):Based on the twenty-four or forty-eight hour window you provided earlier, what day of the week would you pick up your property? For example: "Friday"
+					X:
+						Q(day):What is the day of the month that you will pick up your property? For example: "22nd"
+						X:
+							Q(month):What is the month that you will pick up your property?For example:"February"
+							X:
+								Q(year):What is the year that you will pick up your property? For example:"2018"
+								X:
+									Q(signature):Please sign with your full name to verify that all above information is correct and accurate.
+									X:
+										Q(thanks):Thanks for that info!  GOTO:how	
+Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse		
+
+DOC(7):RETURN CONFISCATED PROPERTY
+Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+<br><br>
+How would you like to proceed? 
+
+A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
+	Q(7.1): Wait a moment to see if a download starts. GOTO:didthatwork
+A: Email Word file to myself. 
+	Q(sendto): What is your email address? Note: if you direct this email to an address other than your own, you will have no record that it was sent, and the purpose of the email will not be clear to someone who is not expecting it. If you want to send this file to someone, it is best to email it to yourself and then forward it on. 
+	X:[javascript:submit2('https://colarusso.pythonanywhere.com/2email/','POST','','','','json_doc','_blank')]
+		Q(7.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
+A: Email my landlord a plain-text email. 
+	DOC(7.3):
+<x>lname</x>							
+<x>lstreet</x>
+<x>laddress</x>
+
+I, <x>tname1</x>, claim that you have intentionally confiscated my property and are holding it at: <x>tstreet</x> <x>taddress</x>
+
+Please be advised that Minnesota Statute § 504B.101 forbids a landlord from holding a tenant’s personal property, even if the tenant is behind on rent. Such conduct may constitute a crime.
+
+As required by Minnesota Statute § 504B.271, you must allow me to take possession of my personal property within: 
+
+<x>twentyfour</x>
+
+If you fail to do so, I may sue for punitive damages of up to the greater of $1,000 or twice actual damages in addition to actual damages (the value of my property), as well as reasonable attorney fees.
+
+Furthermore, Minnesota Statute § 504B.271 forbids the landlord from imposing any fees on the tenant before the tenant picks up his/her property. If you or your agent attempt to charge me any fees up front for return of my property, you will have violated the statute.
+
+I sincerely hope you consider these consequences and you allow me immediate access to my personal property within the required time. I will pick up my property at the address above on:
+ <x>weekdaypickup</x>, the <x>day</x> day of <x>month</x>, <x>year</x>. 
+	
+
+<x>signature</x>						  
+
+
+	Q(llemail): What is your landlord's email address?
+	X:
+		Q(draft): Alright, we'll draft an email. Note: This will only work if you have a default email setup on this device. If you're not sure if you do, you can go ahead and try. We'll let you choose another option if it doesn't work.
+		A[javascript:mail2(getvar('llemail'),'Property Confiscation Form',doc());]: Open draft email
+			Q(7.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
+	A: I don't know?
+		Q(7.3.2): Do you still want to open a draft email?
+		A: Yes
+			Q(7.3.2.1):GOTO:draft
+		A: No
+			Q(7.3.2.2): Okay, back to your options. GOTO:how	
+
+Q(didthatwork): Did it work?
+A: Yes
+	Q(8.1): Great. Thank you or using HOME line! GOTO:anythingelse
+A: No
+	Q(8.2): Try one of the other options. GOTO:how
+
+Q(anythingelse): Is there anything else you'd like to do?
+A: Talk to a live person at HOME Line.
+	Q(9.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(9.2):GOTO:end
+A: Revisit my previous options.
+	Q(9.3):GOTO:how
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
+	Q(9.4):GOTO:anythingelse
+
+Q(end): Thank you for using HOME Line! GOTO:anythingelse
+
+Q(canthelp): Then I'm afraid we can't help you. GOTO:terms
