@@ -45,13 +45,15 @@ a.menu {
 <input type="hidden" name="name" value="Guest Rights"/>
 <input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Guest_Rights_Form(nolines.docx"/>
 <div id="icon"></div>
-<h2 style="text-align:center;">Guest Rights Letter Bot</h2>
+<h2 style="text-align:center;">Guest Rights Letter Bot<sup><font size=-1>Beta</font></sup>
+</h2>
 <div class="menu_bar">
 	<p style="text-align:center;">
 		<a href="https://homelinemn.org/" class="menu"> Main Site </a>
 		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
+<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. Or...</p>
 <p>Answer the following questions to draft a form letter to your landlord asking that they recognize your rights to have guests. Alternatively, you could download <a href="https://homelinemn.org/wp-content/uploads/guest-rights.pdf" target="_blank"> a blank form letter </a> and fill it out yourself.</p>
 <p>You have a right to have guests in your home. If your landlord has prevented you from having guests in your home, use this Letter Bot to help create a letter to send to your landlord about your guest rights.</p>

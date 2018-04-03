@@ -45,13 +45,16 @@ a.menu {
 <input type="hidden" name="name" value="Utility Bill Request"/>
 <input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Utility_Bill_Request_nolines.docx"/>
 <div id="icon"></div>
-<h2 style="text-align:center;">Utility Bill Letter Bot</h2>
+<h2 style="text-align:center;">Utility Bill Letter Bot <sup><font size=-1>Beta</font></sup>
+</h2>
+
 <div class="menu_bar">
 	<p style="text-align:center;">
 		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
 		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
+<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. Or...</p>
 <p>Answers the following questions to draft a form letter to your landlord asking that they provide a copy of a utility bill. Alternatively, you could download <a href="http://www.homelinemn.org/wp-content/uploads/Utility%20Bill%20Request%20Form%20Ltr.pdf" target="_blank">a blank form letter</a> and fill it out yourself.</p>
 <p>Use this letter if your apartment has a single utility meter that is shared with multiple units or the common areas and your landlord splits the full utility bill among all residents. If the landlord is complying with the law (<a href="https://www.revisor.mn.gov/statutes/?id=504B.215#stat.504B.215.2a" target="_blank">504B.215 Subd. 2a</a>), they are required to provide you with copies of the actual utility bills for the entire property so that you can be certain the landlord is apportioning the bills correctly.</p>
