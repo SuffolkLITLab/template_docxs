@@ -175,7 +175,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(10.2):GOTO:end
 A: Revisit my previous options.
-	Q(10.3):GOTO:how
+	Q(10.3):GOTO:neighborvio
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
 	Q(10.4):GOTO:anythingelse
 

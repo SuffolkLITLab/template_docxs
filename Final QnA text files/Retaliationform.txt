@@ -96,6 +96,8 @@ Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse
 DOC(6):NOTICE OF RETALIATORY CONDUCT
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
+*Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
+<br><br>
 How would you like to proceed? 
 
 A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
@@ -149,7 +151,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(8.2):GOTO:end
 A: Revisit my earlier options.
-	Q(8.3):GOTO:how
+	Q(8.3):GOTO: retaliation
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
 	Q(8.4):GOTO:anythingelse
 
