@@ -64,7 +64,7 @@ A: Yes
 A: No
 	Q(1.2):GOTO:canthelp
 
-Q(neighborvio):Is your premises not fit for use because of an action conducted by your neighbor?
+Q(neighborvio):Are you not able to enjoy your premises because of an action conducted by your neighbor?
 A:No
 	Q(2.1):GOTO:sorry
 A:Yes
@@ -109,6 +109,9 @@ X:
 DOC(8):NEIGHBOR VIOLATION
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
+*Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
+<br><br>
+
 How would you like to proceed? 
 
 A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
@@ -178,4 +181,11 @@ A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]:
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
-Q(canthelp): Then I'm afraid we can't help you. GOTO:terms
+Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
+
+Q(otheroptions):What would you like to do?
+A: Talk to a live person at HOME Line.
+	Q(13.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(13.2):GOTO:otheroptions
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.

@@ -52,15 +52,16 @@ a.menu {
 		<a href="." class="menu"> Letter Bot Terms of Service </a>
 	</p>
 </div>
+<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
-<p>You can also answer the following questions to draft a form letter requesting a repair. You could download <a href="">a blank form letter</a> and fill it out yourself as well!.</p>
+<p>You can also answer the following questions to draft a form letter to your landlord asking that they make repairs at your residence. You could download <a href="https://homelinemn.org/wp-content/uploads/demand-for-property.pdf">a blank form letter</a> and fill it out yourself as well!.</p>
+<p>If your landlord needs to make repairs and you would like to request that they do, use this Letter Bot to help create a letter to send to your landlord.</p>
 
 Q(terms): Do you agree to the <a href="" target="_blank">Letter Bot Terms of Service</a>?
-A:[javascript:save2('repair.csv',csv())]
 A: Yes
-	Q(1.2):GOTO:repairs
+	Q(1.1):GOTO:repairs
 A: No
-	Q(1.3):GOTO:canthelp
+	Q(1.2):GOTO:canthelp
 
 
 Q(repairs):Is the repair problem something that you, a family member, or guest caused either intentionally or by being irresponsible? 
@@ -107,6 +108,8 @@ X:
 Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse		
 DOC(9):Request for Repair
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+<br><br>
+*Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
 <br><br>
 How would you like to proceed? 
 
@@ -168,4 +171,11 @@ A: Revisit my earlier options.
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
-Q(canthelp): Then I'm afraid we can't help you.
+Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
+
+Q(otheroptions):What would you like to do?
+A: Talk to a live person at HOME Line.
+	Q(14.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(14.2):GOTO:otheroptions
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
