@@ -76,7 +76,7 @@ A:No
 	Q(3.1):GOTO:notresponsible
 A:Yes
 	Q(3.2):You should seek legal counsel. You can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
-Q(notresponsible): In nearly all cases, Minnesota state law requires your landlord to maintain and repair the property. <p> Your landlord is also responsible for paying for these repairs even if the lease says otherwise. <p> Note that this is true even if the problem is something like bedbugs.   Sometimes landlords say that a tenant has to pay for a bedbug extermination because the bedbugs started in your unit. However, this is NOT true. <p> It is not good enough to say that the bedbugs hitched a ride in on you. The landlord must point to some specific act you took that was irresponsible if they want you to pay the bill. <p><p>   Would you like me to create a letter for you to send to your landlord responding to the bill for bedbug removal?
+Q(notresponsible): In nearly all cases, Minnesota state law requires your landlord to maintain and repair the property. Your landlord is also responsible for paying for these repairs even if the lease says otherwise. Note that this is true even if the problem is something like bedbugs.   Sometimes landlords say that a tenant has to pay for a bedbug extermination because the bedbugs started in your unit. However, this is NOT true. It is not good enough to say that the bedbugs hitched a ride in on you. The landlord must point to some specific act you took that was irresponsible if they want you to pay the bill. Would you like me to create a letter for you to send to your landlord responding to the bill for bedbug removal?
 A:No
 	Q(4.1):GOTO:repairend
 A:Yes
@@ -165,4 +165,11 @@ A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]:
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
-Q(canthelp): Then I'm afraid we can't help you. GOTO:terms
+Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
+
+Q(otheroptions):What would you like to do?
+A: Talk to a live person at HOME Line.
+	Q(15.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(15.2):GOTO:otheroptions
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.

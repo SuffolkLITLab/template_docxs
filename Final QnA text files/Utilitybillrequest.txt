@@ -45,7 +45,7 @@ a.menu {
 <input type="hidden" name="name" value="Utility Bill Request"/>
 <input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Utility_Bill_Request_nolines.docx"/>
 <div id="icon"></div>
-<h2 style="text-align:center;">Utility Bill Letter Bot <sup><font size=-1>Beta</font></sup>
+<h2 style="text-align:center;">Utility Bill Letter Bot<sup><font size=-1>Beta</font></sup>
 </h2>
 
 <div class="menu_bar">
@@ -160,7 +160,7 @@ Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
 
 Q(otheroptions):What would you like to do?
 A: Talk to a live person at HOME Line.
-	Q(13.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+	Q(11.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
-	Q(13.2):GOTO:otheroptions
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
+	Q(11.2):GOTO:otheroptions
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.

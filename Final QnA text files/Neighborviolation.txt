@@ -188,4 +188,4 @@ A: Talk to a live person at HOME Line.
 	Q(13.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(13.2):GOTO:otheroptions
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.

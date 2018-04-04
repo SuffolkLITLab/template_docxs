@@ -1,0 +1,92 @@
+Title: HOME Line Form Bot
+Author: HOME Line
+Description: 
+Before:
+<style>
+body{
+	background:white;
+	background-image: url("http://suffolklitlab.org/images/babbage.jpg");
+	background-color: #fff;
+	background-repeat: repeat-x;
+	background-position: center -120px ;
+}
+#conversation {
+	max-width:900px;
+}
+#icon {
+	z-index:2;
+	margin:45px auto 14px auto;
+	border-radius: 20px;
+	width:125px; 
+	height:75px; 
+	border: 3px solid #555;
+	background-color: #fff;
+	background-size: 100px;
+	background-position: center;
+ 	background-repeat: no-repeat;
+	background-image: url('https://homelinemn.org/wp-content/uploads/cropped-HOME-Line-logo-1.png');
+}
+.menu_bar{
+	border-top: solid 1px #888;
+	border-bottom: solid 1px #888;
+	margin:0 0 30px 0;
+}
+a.menu {
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #529ecc;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding:0 4px;
+}
+</style>
+<div id="icon"></div>
+<h2 style="text-align:center;">HOME Line Letter Bot<sup><font size=-1>Beta</font></h2>
+<div class="menu_bar">
+	<p style="text-align:center;">
+		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+	</p>
+</div>
+<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
+<p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. <a href="https://homelinemn.org/e-mail-an-attorney/" target="_blank">Email an attorney. </a> Or...</p>
+<p>Answer some questions to help complete a form letter to download, email to yourself, or email to your landlord or someone else.</p>
+
+
+Q(whatdo): What would you like to do?
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Securityrequest.html]:Get my security deposit back.
+A:Ask my landlord about a bill.
+	Q(1.2):Was the bill about repairs?
+	A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Responsetoinvoicerepairs.html]:Yes
+	A:No
+		Q(1.2.2):Was the bill about bed bugs?
+		A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Responsetoinvoicebedbugs.html]:Yes
+		A:No
+			Q(1.2.2.2): It doesn't seem like we can help you. GOTO:anythingelse
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/RighttoPrivacy.html]:Tell my landlord that they should not have come into my home.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/RepairsRequest.html]:Request some repairs for my home.
+A: More options...
+	Q(1.5):GOTO:more
+Q(more): What would you like to do?
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Neighborviolation.html]:Complain about a neighbor.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/GuestRights.html]:Complain to my landlord about not allowing guests.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Retaliationform.html]:Tell my landlord that I feel like I'm being unfairly treated for asserting my rights.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Copyoflease.html]:Request a copy of my lease.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Utilitybillrequest.html]:Request a copy of a utility bill.
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Propertyconfiscation.html]:Demand the return of my property that my landlord took.
+A:See previous options.
+	Q(2.7):GOTO:whatdo
+A:None of these.
+	Q(2.8):GOTO:anythingelse
+
+Q(anythingelse): Is there anything else you'd like to do?
+A: Talk to a live person at HOME Line.
+	Q(3.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(3.2):GOTO:end
+A:Review my previous options.
+	Q(3.3):GOTO:whatdo
+
+Q(end): Thank you. GOTO:anythingelse
