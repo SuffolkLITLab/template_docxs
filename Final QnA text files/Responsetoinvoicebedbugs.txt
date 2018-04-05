@@ -104,7 +104,7 @@ X:
 						Q(thanks):Thanks for that info!  GOTO:how	
 Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse		
 
-DOC(10):RESPONSE TO AN INVOICE FOR BED BUG REMOVAL
+DOC(10):Response to Invoice for Bed Bug Removal
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
 *Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
@@ -119,6 +119,7 @@ A: Email Word file to myself.
 		Q(10.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
 A: Email my landlord a plain-text email. 
 	DOC(10.3):
+
 <x>lname</x>
 <x>lstreet</x>
 <x>laddress</x>
@@ -142,7 +143,7 @@ Thank you for your prompt attention to this matter.
 	Q(llemail): What is your landlord's email address?
 	X:
 		Q(draft): Alright, we'll draft an email. Note: This will only work if you have a default email setup on this device. If you're not sure if you do, you can go ahead and try. We'll let you choose another option if it doesn't work.
-		A[javascript:mail2(getvar('llemail'),'invoicebedbugsnolines',doc());]: Open draft email
+		A[javascript:mail2(getvar('llemail'),'Bed_Bug_Invoice',doc());]: Open draft email
 			Q(10.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
 	A: I don't know?
 		Q(10.3.2): Do you still want to open a draft email?
@@ -163,7 +164,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(12.2):GOTO:end
 A: Revisit my earlier options.
-	Q(12.3):GOTO:invoicebedbugs
+	Q(12.3):GOTO:how
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
 	Q(12.4):GOTO:anythingelse
 
