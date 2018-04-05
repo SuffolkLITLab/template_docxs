@@ -51,6 +51,8 @@ a.menu {
 	<p style="text-align:center;">
 		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
 		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+		<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
+
 	</p>
 </div>
 <p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
@@ -75,7 +77,7 @@ A:Yes
 Q(tname1):What's your full name? (i.e. John Smith)
 X:
 	Q(3.1):Thanks, nice to meet you <x>tname1</x>!  GOTO:tstreet
-Q(tstreet):What is your street address?  For example: "123 Main st."
+Q(tstreet):What is your street address?  For example: "123 Main st."<br> <br>*Note: at this time, we ask that you please just give us the street name, we will ask for city and state later on. <br>
 X:
 	Q(taddress):What is your city, state, and zip?  For example: "Boston, MA. 02108"
 	X:
@@ -85,16 +87,18 @@ X:
 			X:
 				Q(laddress):What is your landlord's city, state, and zip?  For example: "Boston, MA. 02108"
 				X:
-					Q(signature):Please sign full name to verify that all above information is correct and accurate.
+					Q(signature):Please type your full name to serve as a signature on the letter.
 					X:
-						Q(noticetype):What notice did you receive that you consider to be retalitory? For example: "Notice of Rent Increase"
+						Q(noticetype):What notice did you receive that you consider to be retalitory? For example: "Rent Increase"
 						X:
 							Q(actions):What actions did you conduct that you believe your landlord is retaliating against? For example: "Had an argument with Landlord"
 							X:
 								Q(thanks):Thanks for that info!  GOTO:how	
 Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse	
 DOC(6):NOTICE OF RETALIATORY CONDUCT
-Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use my personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+<br><br>
+*Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
 <br><br>
 How would you like to proceed? 
 
@@ -149,7 +153,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(8.2):GOTO:end
 A: Revisit my earlier options.
-	Q(8.3):GOTO:how
+	Q(8.3):GOTO: retaliation
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
 	Q(8.4):GOTO:anythingelse
 

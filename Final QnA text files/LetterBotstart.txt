@@ -56,7 +56,7 @@ a.menu {
 
 
 Q(whatdo): What would you like to do?
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Securityrequest.html]:Get my security deposit back.
+
 A:Ask my landlord about a bill.
 	Q(1.2):Was the bill about repairs?
 	A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Responsetoinvoicerepairs.html]:Yes
