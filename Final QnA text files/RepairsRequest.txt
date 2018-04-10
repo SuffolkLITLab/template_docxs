@@ -168,7 +168,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(11.2):GOTO:end
 A: Revisit my earlier options.
-	Q(11.3):GOTO:repairs
+	Q(11.3):GOTO:how
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
