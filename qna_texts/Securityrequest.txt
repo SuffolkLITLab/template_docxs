@@ -52,15 +52,22 @@ a.menu {
 	<p style="text-align:center;">
 		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
 		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+	</p>
+	<p style="text-align:center;">
 		<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
-
 	</p>
 </div>
 <p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
 <p>You can also answer the following questions to draft a form letter requesting the return of your security deposit. You could download <a href="http://www.homelinemn.org/wp-content/uploads/Security-Deposit-Request-Form-Ltr_HOMLin_09-10.pdf" target="_blank">a blank form letter</a> and fill it out yourself as well!</p>
 <p>If your landlord has not returned your deposit or did not give you a letter that explains how the deposit was used within 21 days after you moved out, use the form letter. If you need help calculating the interest on your deposit, use <a href="http://www.homelinemn.org/wp-content/uploads/security-deposit-interest1.pdf" target="_blank">this worksheet.</a></p>
-
+After:
+<script>
+function rentint(start,end,deposit) {
+	interest = ((start - end)/(60*60*24*365*1000)) * Number(deposit) * 0.01;
+	return interest
+}
+</script>
 Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
 A: Yes
 	Q(1.1):GOTO:secdep
@@ -69,43 +76,42 @@ A: No
 
 
 Q(secdep):Have you received a letter explaining why you are not getting all or a portion of your deposit back?
-A:No
-	Q(2.1):GOTO:sorry
 A:Yes
-	Q(2.2):GOTO:receivedletter
+	Q(2.1):GOTO:receivedletter
+A:No
+	Q(2.2):GOTO:sorry
 Q(receivedletter):Did the landlord put the letter in the mail at least 21 days after your lease ended and you gave the landlord a mailing address?  <p> Putting it in the mail counts, so if the envelope is post-marked by the 21st, you should answer yes.
-A:No
-	Q(3.1):GOTO:noletter
 A:Yes
-	Q(3.2):GOTO:aftertwentyonedays
+	Q(3.1):GOTO:aftertwentyonedays
+A:No
+	Q(3.2):GOTO:noletter
 Q(noletter): Is your lease over and have you moved out?
-A:No
-	Q(4.1):Your least must be over and you must move out before the landlord has to return your deposit. However, if you have questions about what to do to ensure that you get your deposit, this is a good time to contact HOME Line. You can call our hotline (Number) or go online to our website to email an attorney.
 A:Yes
-	Q(4.2):GOTO:information
+	Q(4.1):GOTO:information
+A:No
+	Q(4.2):Your least must be over and you must move out before the landlord has to return your deposit. However, if you have questions about what to do to ensure that you get your deposit, this is a good time to contact HOME Line. You can call our hotline (Number) or go online to our website to email an attorney.
 Q(information):Have you given your landlord an address to mail your security deposit to?
-A:No
-	Q(5.1):You must give your landlord a mailing address before your landlord has to return your deposit. It does not need to be where you live now. It can be a P.O. Box, or a friend's or family member's address. <p> You should provide a mailing address to your landlord. If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
 A:Yes
-	Q(5.2):Your landlord has 21 days from the end of your lease and receipt of a mailing address (whichever happens last) to return your deposit. <p> If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
+	Q(5.1):Your landlord has 21 days from the end of your lease and receipt of a mailing address (whichever happens last) to return your deposit. <p> If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
+A:No
+	Q(5.2):You must give your landlord a mailing address before your landlord has to return your deposit. It does not need to be where you live now. It can be a P.O. Box, or a friend's or family member's address. <p> You should provide a mailing address to your landlord. If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
 Q(aftertwentyonedays):Once the tenancy is over and you have provided your former landlord with a mailing address, your former landlord has 21 days to either send you your deposit or a letter explaining the deductions from your deposit. <p> If your landlord misses this deadline, you can sue for double your deposit, double the interest on your deposit, plus an additional $500. 
 
 <p>IMPORTANT LEGAL NOTICE: If you choose to write a letter below this letter proposes a settlement. Settlements are binding. If you do not understand the settlement proposed in the letter, DO NOT SEND THE LETTER. 
 <p> If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. 
 <p> If the landlord sent you a portion of the deposit back, you should seek legal advice before cashing the check. <p>
 
-<p> Would you like me to create a letter for you to send to your landlord to ask for your deposit back? 
-
-A:No
-	Q(6.1):GOTO:sorry
+<p> Would you like me to create a letter for you to send to your landlord to ask for your deposit back?
 A:Yes
-	Q(6.2):GOTO:tname1
+	Q(6.1):GOTO:tname1
+A:No
+	Q(6.2):GOTO:sorry
 
 Q(tname1):What's your full name? (i.e. John Smith)
 X:
 	Q(response):Thanks, nice to meet you <x>tname1</x>!  GOTO:background
 Q(background):Wonderful, I just need a bit more background information. GOTO:tstreet
-Q(tstreet):What is your street address?  For example: "123 Main st." <br> <br>*Note: at this time, we ask that you please just give us the street name, we will ask for city and state later on. <br>
+Q(tstreet):What is your street address?  For example: "123 Main st."
 X:
 	Q(taddress):What is your city, state, and zip?  For example: "Boston, MA. 02108"
 	X:
@@ -123,10 +129,21 @@ X:
 							X:
 								Q(signature):Please type your full name to serve as a signature on the letter.
 								X:
-									Q(thanks):Thanks for that info!  GOTO:how	
+									Q(thanks):Thanks for that info!  GOTO:how
+Q(movein):Now we will calculate the interest on your security deposit. <br><br> When did you move in?
+X:date
+	Q(moveout): When did you move out?
+	X:date
+		Q(deposit): How much was your security deposit?
+		X:number
+			Q(10.1.1.1):Click below to calculate your interest. (Make sure to remember the number!)
+			A[javascript:alert(rentint(new Date(getvar('moveout')).getTime(), new Date(getvar('movein')).getTime(),getvar('deposit')))]: Calculate
+				Q(interest): How much was the interest?
+				X:number
+					Q(10.1.1.1.1.1):GOTO:how
 Q(sorry): Sorry, it does not look like we can help! Remember to keep any evidence you have about the state of the premises when you left (this includes images, video, and a list of witnesses to the condition of the unit at move-out). <p><p> If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. Have a good day!	GOTO:anythingelse	
 
-DOC(11):SECURITY DEPOSIT
+DOC(12):SECURITY DEPOSIT
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
 Please remember to ALWAYS proofread your letters for accuracy.
@@ -134,13 +151,13 @@ Please remember to ALWAYS proofread your letters for accuracy.
 How would you like to proceed? 
 
 A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
-	Q(11.1): Wait a moment to see if a download starts. GOTO:didthatwork
+	Q(12.1): Wait a moment to see if a download starts. GOTO:didthatwork
 A: Email Word file to myself. 
 	Q(sendto): What is your email address? Note: if you direct this email to an address other than your own, you will have no record that it was sent, and the purpose of the email will not be clear to someone who is not expecting it. If you want to send this file to someone, it is best to email it to yourself and then forward it on. 
 	X:[javascript:submit2('https://colarusso.pythonanywhere.com/2email/','POST','','','','json_doc','_blank')]
-		Q(11.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
+		Q(12.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
 A: Email my landlord a plain-text email. 
-	DOC(11.3):
+	DOC(12.3):
 
 <x>lname</x>
 <x>lstreet</x>
@@ -172,29 +189,29 @@ I would, however, prefer to settle this issue out of court.  Therefore, please s
 	X:
 		Q(draft): Alright, we'll draft an email. Note: This will only work if you have a default email setup on this device. If you're not sure if you do, you can go ahead and try. We'll let you choose another option if it doesn't work.
 		A[javascript:mail2(getvar('llemail'),'Request_for_Security_Deposit_no_lines',doc());]: Open draft email
-			Q(11.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
+			Q(12.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
 	A: I don't know?
-		Q(11.3.2): Do you still want to open a draft email?
+		Q(12.3.2): Do you still want to open a draft email?
 		A: Yes
-			Q(11.3.2.1):GOTO:draft
+			Q(12.3.2.1):GOTO:draft
 		A: No
-			Q(11.3.2.2): Okay, back to your options. GOTO:how	
+			Q(12.3.2.2): Okay, back to your options. GOTO:how	
 
 Q(didthatwork): Did it work?
 A: Yes
-	Q(12.1): Great. GOTO:anythingelse
+	Q(13.1): Great. GOTO:anythingelse
 A: No
-	Q(12.2): Try one of the other options. GOTO:how
+	Q(13.2): Try one of the other options. GOTO:how
 
 Q(anythingelse): What would you like to do?
 A: Talk to a live person at HOME Line.
-	Q(13.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
+	Q(14.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
-	Q(13.2):GOTO:end
+	Q(14.2):GOTO:end
 A: Revisit my earlier options.
-	Q(13.3):GOTO:how
+	Q(14.3):GOTO:secdep
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
-	Q(13.4):GOTO:anythingelse
+	Q(14.4):GOTO:anythingelse
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
@@ -202,7 +219,7 @@ Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
 
 Q(otheroptions):What would you like to do?
 A: Talk to a live person at HOME Line.
-	Q(16.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+	Q(17.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
-	Q(16.2):GOTO:otheroptions
+	Q(17.2):GOTO:otheroptions
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.

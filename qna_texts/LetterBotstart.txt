@@ -56,26 +56,24 @@ a.menu {
 
 
 Q(whatdo): What would you like to do?
-
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Securityrequest.txt]: Request the return of my security deposit with interest.
 A:Ask my landlord about a bill.
-	Q(1.2):Was the bill about repairs?
-	A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Responsetoinvoicerepairs.html]:Yes
-	A:No
-		Q(1.2.2):Was the bill about bed bugs?
-		A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Responsetoinvoicebedbugs.html]:Yes
-		A:No
-			Q(1.2.2.2): It doesn't seem like we can help you. GOTO:anythingelse
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/RighttoPrivacy.html]:Tell my landlord that they should not have come into my home.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/RepairsRequest.html]:Request some repairs for my home.
+	Q(1.2):What was the bill about?
+	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Responsetoinvoicerepairs.txt]:Repairs
+	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Responsetoinvoicebedbugs.txt]:Bed Bug Extermination
+	A: Neither of these.
+		Q(1.2.3): It doesn't seem like we can help you. GOTO:anythingelse
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/RighttoPrivacy.txt]:Tell my landlord that they should not have come into my home.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/RepairsRequest.txt]:Request some repairs for my home.
 A: More options...
 	Q(1.5):GOTO:more
 Q(more): What would you like to do?
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Neighborviolation.html]:Complain about a neighbor.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/GuestRights.html]:Complain to my landlord about not allowing guests.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Retaliationform.html]:Tell my landlord that I feel like I'm being unfairly treated for asserting my rights.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Copyoflease.html]:Request a copy of my lease.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Utilitybillrequest.html]:Request a copy of a utility bill.
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Propertyconfiscation.html]:Demand the return of my property that my landlord took.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Neighborviolation.txt]:Complain about a neighbor.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/GuestRights.txt]:Complain to my landlord about not allowing guests.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Retaliationform.txt]:Tell my landlord that I feel like I'm being unfairly treated for asserting my rights.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Copyoflease.txt]:Request a copy of my lease.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Utilitybillrequest.txt]:Request a copy of a utility bill.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Propertyconfiscation.txt]:Demand the return of my property that my landlord took.
 A:See previous options.
 	Q(2.7):GOTO:whatdo
 A:None of these.
