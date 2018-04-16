@@ -58,7 +58,7 @@ a.menu {
 <p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. Or...</p>
 <p>Answer the following questions to draft a form letter to your landlord asking that they mitigate a violation for a neighbor. Alternatively, you could download <a href="https://homelinemn.org/wp-content/uploads/neighbor-violation.pdf" target="_blank">a blank form letter</a> and fill it out yourself.</p>
-<p>If you believe your neighbor has acted in a way which has left the premises unfit, use this Letter Bot to help create a letter to send to your landlord.</p>
+<p>If you believe your neighbor has acted in a way which has left the premises unfit, use this Letter Bot to help create a letter to send to your landlord.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</p>
 
 Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
 A: Yes
@@ -108,7 +108,7 @@ X:
 		X:
 			Q(sweet):Thanks for that info! GOTO:how
 DOC(8):NEIGHBOR VIOLATION
-Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 <br><br>
 *Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
 <br><br>
@@ -182,11 +182,12 @@ A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]:
 
 Q(end): Thank you for using HOME Line! GOTO:anythingelse
 
-Q(canthelp): Then I'm afraid we can't help you. GOTO:otheroptions
+Q(canthelp): Given your answer we can't help you at this time. [http://suffolklitlab.org/template_docxs/QnA_HTMLs/LetterBotstart.html][ http://suffolklitlab.org/template_docxs/Letter_Bot_tos.html]   GOTO:otheroptions
 
 Q(otheroptions):What would you like to do?
 A: Talk to a live person at HOME Line.
 	Q(13.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
+
 	Q(13.2):GOTO:otheroptions
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.
