@@ -192,7 +192,7 @@ A: Talk to a live person at HOME Line.
 A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
 	Q(13.2):GOTO:end
 A: Revisit my earlier options.
-	Q(13.3):GOTO:secdep
+	Q(13.3):GOTO:how
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
 	Q(13.4):GOTO:anythingelse
 
