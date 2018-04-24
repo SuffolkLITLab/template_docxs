@@ -60,11 +60,8 @@ a.menu {
 <p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
 <p>You can also answer the following questions to draft a form letter requesting the return of your security deposit. You could download <a href="http://www.homelinemn.org/wp-content/uploads/Security-Deposit-Request-Form-Ltr_HOMLin_09-10.pdf" target="_blank">a blank form letter</a> and fill it out yourself as well!</p>
-<<<<<<< HEAD:Final QnA text files/Securityrequest.txt
-<p>If your landlord has not returned your deposit or did not give you a letter that explains how the deposit was used within 21 days after you moved out, use the form letter. If you need help calculating the interest on your deposit, use <a href="http://www.homelinemn.org/wp-content/uploads/security-deposit-interest1.pdf" target="_blank">this worksheet.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</a></p>
+<p>If your landlord has not returned your deposit or did not give you a letter that explains how the deposit was used within 21 days after you moved out, use the form letter. If you need help calculating the interest on your deposit, use <a href="http://www.homelinemn.org/wp-content/uploads/security-deposit-interest1.pdf" target="_blank">this worksheet.</a> <p>The letter you can create below gives your landlord a certain number of days to respond. Allow your landlord some time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</p>
 
-=======
-<p>If your landlord has not returned your deposit or did not give you a letter that explains how the deposit was used within 21 days after you moved out, use the form letter. If you need help calculating the interest on your deposit, use <a href="http://www.homelinemn.org/wp-content/uploads/security-deposit-interest1.pdf" target="_blank">this worksheet.</a></p>
 After:
 <script>
 function rentint(start,end,deposit) {
@@ -72,7 +69,7 @@ function rentint(start,end,deposit) {
 	return interest
 }
 </script>
->>>>>>> 67f40f43304c7bf18405c493d19c3e462d60c4c8:qna_texts/Securityrequest.txt
+
 Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
 A: Yes
 	Q(1.1):GOTO:secdep
@@ -134,7 +131,7 @@ X:
 							X:
 								Q(signature):Please type your full name to serve as a signature on the letter.
 								X:
-									Q(thanks):Thanks for that info!  GOTO:how
+									Q(thanks):Thanks for that info!  GOTO:movein
 Q(movein):Now we will calculate the interest on your security deposit. <br><br> When did you move in?
 X:date
 	Q(moveout): When did you move out?
@@ -148,10 +145,6 @@ X:date
 					Q(10.1.1.1.1.1):GOTO:how
 Q(sorry): Sorry, it does not look like we can help! Remember to keep any evidence you have about the state of the premises when you left (this includes images, video, and a list of witnesses to the condition of the unit at move-out). <p><p> If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. Have a good day!	GOTO:anythingelse	
 
-<<<<<<< HEAD:Final QnA text files/Securityrequest.txt
-DOC(11):SECURITY DEPOSIT
-Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
-=======
 DOC(12):SECURITY DEPOSIT
 Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) Use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
 >>>>>>> 67f40f43304c7bf18405c493d19c3e462d60c4c8:qna_texts/Securityrequest.txt
@@ -230,13 +223,7 @@ Q(canthelp): Given your answer we can't help you at this time. [http://suffolkli
 Q(otheroptions):What would you like to do?
 A: Talk to a live person at HOME Line.
 <<<<<<< HEAD:Final QnA text files/Securityrequest.txt
-	Q(16.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
-
-	Q(16.2):GOTO:otheroptions
-=======
 	Q(17.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
 	Q(17.2):GOTO:otheroptions
->>>>>>> 67f40f43304c7bf18405c493d19c3e462d60c4c8:qna_texts/Securityrequest.txt
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.
