@@ -51,8 +51,9 @@ a.menu {
 	<p style="text-align:center;">
 		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
 		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
-		<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
-
+	</p>
+	<p style="text-align:center;">
+	<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
 	</p>
 </div>
 <p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
@@ -91,7 +92,8 @@ X:
 						X:
 							Q(violation):What was the conduct your neighbor did to make the premises unfit?
 							X:
-								Q(signature):Please type your full name to serve as a signature on the letter.								X:
+								Q(signature):Please type your full name to serve as a signature on the letter.
+								X:
 									Q(thanks):Thanks for that info!  GOTO:otherneighbor
 Q(otherneighbor):Was there an additional neighbor contributing to the premises becoming unfit?
 A:Yes
