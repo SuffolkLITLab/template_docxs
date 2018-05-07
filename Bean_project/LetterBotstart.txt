@@ -1,5 +1,5 @@
-Title: HOME Line Form Bot
-Author: HOME Line
+Title: LetterBot
+Author: Will Bean
 Description: 
 Before:
 <style>
@@ -17,14 +17,14 @@ body{
 	z-index:2;
 	margin:45px auto 14px auto;
 	border-radius: 20px;
-	width:125px; 
-	height:75px; 
+	width:100px; 
+	height:100px; 
 	border: 3px solid #555;
 	background-color: #fff;
 	background-size: 100px;
 	background-position: center;
  	background-repeat: no-repeat;
-	background-image: url('https://homelinemn.org/wp-content/uploads/cropped-HOME-Line-logo-1.png');
+	background-image: url('https://suffolklitlab.github.io/template_docxs/Bean_project/letterbot.png');
 }
 .menu_bar{
 	border-top: solid 1px #888;
@@ -43,48 +43,44 @@ a.menu {
 }
 </style>
 <div id="icon"></div>
-<h2 style="text-align:center;">HOME Line Letter Bot<sup><font size=-1>Beta</font></h2>
+<h2 style="text-align:center;">LetterBot<sup><font size=-1>Beta</font></h2>
 <div class="menu_bar">
 	<p style="text-align:center;">
-		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
-		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBotToS.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
-<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
-<p>HOME Line is a nonprofit Minnesota tenant advocacy organization. Call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. <a href="https://homelinemn.org/e-mail-an-attorney/" target="_blank">Email an attorney. </a> Or...</p>
-<p>Answer some questions to help complete a form letter to download, email to yourself, or email to your landlord or someone else.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</p>
+<p>This is a class project under active development. You should not rely on it as a source of legal information. It is incomplete.</p>
+<p>Answer some questions to help complete a form letter to download, email to yourself, or email to your landlord or someone else.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request.</p>
 
 
 Q(whatdo): What would you like to do?
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Securityrequest.txt]:Request the return of my security deposit with interest.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Securityrequest.txt]:Request the return of my security deposit with interest.
 A:Ask my landlord about a bill.
 	Q(1.2):What was the bill about?
-	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Responsetoinvoicerepairs.txt]:Repairs
-	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Responsetoinvoicebedbugs.txt]:Bed Bug Extermination
+	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Responsetoinvoicerepairs.txt]:Repairs
+	A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Responsetoinvoicebedbugs.txt]:Bed Bug Extermination
 	A: Neither of these.
 		Q(1.2.3): It doesn't seem like we can help you. GOTO:anythingelse
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/RighttoPrivacy.txt]:Tell my landlord that they should not have come into my home.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/RepairsRequest.txt]:Request some repairs for my home.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/RighttoPrivacy.txt]:Tell my landlord that they should not have come into my home.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/RepairsRequest.txt]:Request some repairs for my home.
 A: More options...
 	Q(1.5):GOTO:more
 Q(more): What would you like to do?
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Neighborviolation.txt]:Complain about a neighbor.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/GuestRights.txt]:Complain to my landlord about not allowing guests.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Retaliationform.txt]:Tell my landlord that I feel like I'm being unfairly treated for asserting my rights.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Copyoflease.txt]:Request a copy of my lease.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Utilitybillrequest.txt]:Request a copy of a utility bill.
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/qna_texts/Propertyconfiscation.txt]:Demand the return of my property that my landlord took.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Neighborviolation.txt]:Complain about a neighbor.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/GuestRights.txt]:Complain to my landlord about not allowing guests.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Retaliationform.txt]:Tell my landlord that I feel like I'm being unfairly treated for asserting my rights.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Copyoflease.txt]:Request a copy of my lease.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Utilitybillrequest.txt]:Request a copy of a utility bill.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/Propertyconfiscation.txt]:Demand the return of my property that my landlord took.
 A:See previous options.
 	Q(2.7):GOTO:whatdo
 A:None of these.
 	Q(2.8):GOTO:anythingelse
 
 Q(anythingelse): Is there anything else you'd like to do?
-A: Talk to a live person at HOME Line.
-	Q(3.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+A:Review my previous options. If you download or email the form, your answers will be sent encrypted over the internet and recorded for the purposes of creating your form. LetterBot does not track your answers, but they will be saved locally on your device. 
+	Q(3.1):GOTO:whatdo
+A: I'm all done.
 	Q(3.2):GOTO:end
-A:Review my previous options. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
-	Q(3.3):GOTO:whatdo
 
 Q(end): Thank you. GOTO:anythingelse

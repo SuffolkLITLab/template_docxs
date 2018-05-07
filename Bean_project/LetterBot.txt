@@ -46,7 +46,7 @@ a.menu {
 <h2 style="text-align:center;">LetterBot<sup><font size=-1>Beta</font></h2>
 <div class="menu_bar">
 	<p style="text-align:center;">
-		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBotToS.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
 <p>This is a class project under active development. You should not rely on it as a source of legal information. It is incomplete.</p>
