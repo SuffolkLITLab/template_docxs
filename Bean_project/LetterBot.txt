@@ -1,0 +1,70 @@
+Title: LetterBot
+Author: Will Bean
+Description: 
+Before:
+<style>
+body{
+	background:white;
+	background-image: url("http://suffolklitlab.org/images/babbage.jpg");
+	background-color: #fff;
+	background-repeat: repeat-x;
+	background-position: center -120px ;
+}
+#conversation {
+	max-width:900px;
+}
+#icon {
+	z-index:2;
+	margin:45px auto 14px auto;
+	border-radius: 20px;
+	width:100px; 
+	height:100px; 
+	border: 3px solid #555;
+	background-color: #fff;
+	background-size: 100px;
+	background-position: center;
+ 	background-repeat: no-repeat;
+	background-image: url('https://suffolklitlab.github.io/template_docxs/Bean_project/letterbot.png');
+}
+.menu_bar{
+	border-top: solid 1px #888;
+	border-bottom: solid 1px #888;
+	margin:0 0 30px 0;
+}
+a.menu {
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #529ecc;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding:0 4px;
+}
+</style>
+<div id="icon"></div>
+<h2 style="text-align:center;">LetterBot<sup><font size=-1>Beta</font></h2>
+<div class="menu_bar">
+	<p style="text-align:center;">
+		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
+	</p>
+</div>
+<p>This is a class project under active development. You should not rely on it as a source of legal information. It is incomplete.</p>
+<p>Answer some questions to help complete a form letter to download, email to yourself, or email to your landlord or someone else.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request.</p>
+
+
+Q(where):Where do you live?
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]:Minnesota
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBot.txt]:Massachusetts
+A:New Hampshire
+	Q(1.3): Still under development. GOTO:where
+A:None of these.
+	Q(1.4):GOTO:anythingelse
+
+Q(anythingelse): Is there anything else you'd like to do?
+A:Review my previous options.
+	Q(2.1):GOTO:where
+A: No, thank you.
+	Q(2.2):GOTO:end
+
+Q(end): Thank you. GOTO:anythingelse
