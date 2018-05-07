@@ -1,0 +1,186 @@
+Title: HOME Line Form Bot
+Author: HOME Line
+Description: 
+Before:
+<style>
+body{
+	background:white;
+	background-image: url("http://suffolklitlab.org/images/babbage.jpg");
+	background-color: #fff;
+	background-repeat: repeat-x;
+	background-position: center -120px ;
+}
+#conversation {
+	max-width:900px;
+}
+#icon {
+	z-index:2;
+	margin:45px auto 14px auto;
+	border-radius: 20px;
+	width:125px; 
+	height:75px; 
+	border: 3px solid #555;
+	background-color: #fff;
+	background-size: 100px;
+	background-position: center;
+ 	background-repeat: no-repeat;
+	background-image: url('https://homelinemn.org/wp-content/uploads/cropped-HOME-Line-logo-1.png');
+}
+.menu_bar{
+	border-top: solid 1px #888;
+	border-bottom: solid 1px #888;
+	margin:0 0 30px 0;
+}
+a.menu {
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #529ecc;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding:0 4px;
+}
+</style>
+<input type="hidden" name="name" value="Repair Request"/>
+<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/Request_for_Repairs.docx"/>
+<div id="icon"></div>
+<h2 style="text-align:center;">Repair Request Letter Bot<sup><font size=-1>Beta</font></sup></h2>
+<div class="menu_bar">
+	<p style="text-align:center;">
+		<a href="https://homelinemn.org/" class="menu"> Main Site </a>
+		<a href="." class="menu"> Terms of Service </a>
+	</p>
+	<p style="text-align:center;">
+		<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
+
+	</p>
+</div>
+<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
+<p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
+<p>You can also answer the following questions to draft a form letter to your landlord asking that they make repairs at your residence. You could download <a href="https://homelinemn.org/wp-content/uploads/demand-for-property.pdf">a blank form letter</a> and fill it out yourself as well!.</p>
+<p>If your landlord needs to make repairs and you would like to request that they do, use this Letter Bot to help create a letter to send to your landlord.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</p>
+
+Q(terms): Do you agree to the <a href="" target="_blank">Letter Bot Terms of Service</a>?
+A: Yes
+	Q(1.1):GOTO:repairs
+A: No
+	Q(1.2):GOTO:canthelp
+
+
+Q(repairs):Is the repair problem something that you, a family member, or guest caused either intentionally or by being irresponsible? 
+A:No
+	Q(2.1):GOTO:emergency
+A:Yes
+	Q(2.2):You should seek legal counsel. You can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
+Q(emergency):Is the repair problem an emergency involving the loss of running water, hot water, heat, electricity, sanitary facilities, or other essential services or facilities that the landlord is responsible for providing?
+A:No
+	Q(3.1):In nearly all cases, the law requires your landlord to maintain and repair the property. <p> If you have a non-emergency repair issue, you should consider calling your city's information line to find out if your city has an inspector who can inspect the property for violations. <p> You should also ask your landlord to fix the problem in writing. GOTO:letter
+A:Yes
+	Q(3.2):Tenants have unique options when facing an emergency repair issue. However, due to the seriousness of the issue, you should seek legal counsel. <p> You can call our hotline or go online to our website to email an attorney. GOTO:anythingelse
+Q(letter):I can help you write a letter. Would you like me to create a letter for you to send to your landlord to ask for repairs?
+A:Yes
+	Q(4.1):GOTO:tname1
+A:No
+	Q(4.2):GOTO:anythingelse
+
+Q(tname1):What's your full name? (i.e. John Smith)
+X:
+	Q(5.1):Thanks, nice to meet you <x>tname1</x>!  GOTO:tstreet
+Q(tstreet):What is your street address?  For example: "123 Main st."<br> <br>*Note: at this time, we ask that you please just give us the street name, we will ask for city and state later on. <br>
+X:
+	Q(taddress):What is your city, state, and zip?  For example: "Boston, MA. 02108"
+	X:
+		Q(lname):What is your landlord's full name?
+		X:
+			Q(lstreet):What is your landlord's street address?  For example: "123 Main st."
+			X:
+				Q(laddress):What is your landlord's city, state, and zip?  For example: "Boston, MA. 02108"
+				X:
+					Q(itemone):What item would you like prepared? For example: "Leaking roof."
+					X:
+						Q(additionalitems):Are there additional items you would like repaired?
+						A:Yes
+							Q(6.1.1.1.1.1.1.1):GOTO:nothaone
+						A:No
+							Q(signature):Please type your full name to serve as a signature on the letter.
+							X:
+								Q(6.1.1.1.1.1.1.2.1):GOTO:how
+Q(nothaone):What item would you like prepared? For example: "Leaking roof."
+X:
+	Q(thanks):Thanks for that info!  GOTO:signature
+Q(sorry): Sorry, it does not look like we can help! GOTO:anythingelse		
+DOC(9):Request for Repair
+Q(how):There are three options: (1) download a pre-filled from letter (MS Word file) to edit and/or print; (2) email a copy of the same pre-filled from letter to yourself; or (3) use your personal email on this device to send the content of that letter, but as the text of an email, to my landlord.
+<br><br>
+*Please note that you should PROOFREAD your letter before you send it to make sure that it makes sense and that it is complete and accurate.
+<br><br>
+How would you like to proceed? 
+
+A[javascript:submit2('https://colarusso.pythonanywhere.com/2docx/','POST','','','','json_doc')]: Download Word file.
+	Q(9.1): Wait a moment to see if a download starts. GOTO:didthatwork
+A: Email Word file to myself. 
+	Q(sendto): What is your email address? Note: if you direct this email to an address other than your own, you will have no record that it was sent, and the purpose of the email will not be clear to someone who is not expecting it. If you want to send this file to someone, it is best to email it to yourself and then forward it on. 
+	X:[javascript:submit2('https://colarusso.pythonanywhere.com/2email/','POST','','','','json_doc','_blank')]
+		Q(9.2.1): Wait a moment. You should get a message telling you how things went. GOTO:didthatwork
+A: Email my landlord a plain-text email. 
+	DOC(9.3):
+<x>lname</x>								
+<x>lstreet</x>
+<x>laddress</x>
+
+I, <x>tname1</x>, reside at your property located at <x>tstreet</x>, <x>taddress</x>.
+
+I wish to inform you that Minnesota Statute §504B.161 requires that every landlord of residential premises, whether the lease is in writing or oral, do the following:
+
+(1)	keep the premises and all common areas fit for the use intended by the parties;
+(2)	keep the premises in reasonable repair during the term of the lease or license;
+(3)	maintain the premises in compliance with the applicable health and safety laws of the state. 
+
+Since parties to a lease or license of residential premises may not waive or modify the “covenants of habitability” imposed by this statute, the landlord must do these things regardless of any contrary lease terms (unless the tenant caused the disrepair by his or her willful, malicious, or irresponsible conduct).
+
+I am requesting repairs within 14 days to the following items or conditions:
+
+1.<x>itemone</x>
+2.<x>nothaone</x>
+
+
+<x>signature</x>
+
+	Q(llemail): What is your landlord's email address?
+	X:
+		Q(draft): Alright, we'll draft an email. Note: This will only work if you have a default email setup on this device. If you're not sure if you do, you can go ahead and try. We'll let you choose another option if it doesn't work.
+		A[javascript:mail2(getvar('llemail'),'Repair Request',doc());]: Open draft email
+			Q(9.3.1.1): Wait a moment to see if a draft email opens. GOTO:didthatwork
+	A: I don't know?
+		Q(9.3.2): Do you still want to open a draft email?
+		A: Yes
+			Q(9.3.2.1):GOTO:draft
+		A: No
+			Q(9.3.2.2): Okay, back to your options. GOTO:how	
+
+Q(didthatwork): Did it work?
+A: Yes
+	Q(10.1): Great. GOTO:anythingelse
+A: No
+	Q(10.2): Try one of the other options. GOTO:how
+
+Q(anythingelse): Remember to thoroughly document your repair problem. Take pictures, record video and sounds, track what is happening and when in a notepad, and remember who else has seen the problem so they can be a witness. If you would like to seek legal counsel, you can call our hotline or go online to our website to email an attorney. Is there anything else we can help you with?
+A: Talk to a live person at HOME Line.
+	Q(11.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
+	Q(11.2):GOTO:end
+A: Revisit my earlier options.
+	Q(11.3):GOTO:how
+
+Q(end): Thank you for using HOME Line! GOTO:anythingelse
+
+Q(canthelp): Given your answer we can't help you at this time. [http://suffolklitlab.org/template_docxs/QnA_HTMLs/LetterBotstart.html][ http://suffolklitlab.org/template_docxs/Letter_Bot_tos.html]   GOTO:otheroptions
+
+Q(otheroptions):What would you like to do?
+A: Talk to a live person at HOME Line.
+	Q(14.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
+A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
+
+	Q(14.2):GOTO:otheroptions
+A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.
