@@ -1,5 +1,5 @@
-Title: HOME Line Form Bot
-Author: HOME Line
+Title: LetterBot
+Author: Will Bean
 Description: 
 Before:
 <style>
@@ -17,14 +17,14 @@ body{
 	z-index:2;
 	margin:45px auto 14px auto;
 	border-radius: 20px;
-	width:125px; 
-	height:75px; 
+	width:100px; 
+	height:100px; 
 	border: 3px solid #555;
 	background-color: #fff;
 	background-size: 100px;
 	background-position: center;
  	background-repeat: no-repeat;
-	background-image: url('https://homelinemn.org/wp-content/uploads/cropped-HOME-Line-logo-1.png');
+	background-image: url('https://suffolklitlab.github.io/template_docxs/Bean_project/letterbot.png');
 }
 .menu_bar{
 	border-top: solid 1px #888;
@@ -42,26 +42,19 @@ a.menu {
 	padding:0 4px;
 }
 </style>
-<input type="hidden" name="name" value="Right to Privacy Form"/>
-<input type="hidden" name="docx_uri" value="https://suffolklitlab.github.io/template_docxs/RighttoPrivacynolines.docx"/>
 <div id="icon"></div>
-<h2 style="text-align:center;">Privacy Rights Letter Bot<sup><font size=-1>Beta</font></sup>
-</h2>
-
+<h2 style="text-align:center;">LetterBot<sup><font size=-1>Beta</font></h2>
+<h2 style="text-align:center;">Privacy Rights<sup></h2>
 <div class="menu_bar">
 	<p style="text-align:center;">
-		<a href="https://homelinemn.org/" class="menu" target="_blank"> Main Site </a>
-		<a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" class="menu" target="_blank"> Terms of Service </a>
-		<a href= "https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html" class="menu" target="_blank"> Fill out another form </a>
-
+		<a href="https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBot.txt" class="menu" target="_blank"> Start Over </a>
+		<a href="https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBotToS.html" class="menu" target="_blank"> Terms of Service </a>
 	</p>
 </div>
-<p>This is a class project under active development by Suffolk's <a href="http://suffolklitlab.org/" target="_blank">LIT Lab</a>. You should not rely on it as a source of legal information. It is incomplete.</p>
-<p>HOME Line is here to help you! HOME Line is a nonprofit Minnesota tenant advocacy organization that you can call at <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. </p>
-<p>You can also answer the following questions to draft a form letter to your landlord explaining your lawful Right to Privacy. You could download <a href="http://www.homelinemn.org/wp-content/uploads/privacy-letter.pdf" target="_blank">a blank form letter</a> and fill it out yourself as well!.</p>
+<p>This is a class project under active development. You should not rely on it as a source of legal information. It is incomplete.</p>
 <p>If your landlord or property manager enters your home without notifying you that they would do so, use this Letter Bot to help create a letter to send to your landlord.The letter you filled out gives your landlord a certain number of days to respond. Allow your landlord that amount of time to reply to your request. If the landlord or property owner fails to comply with your request, call HOME Line and a tenant advocate will discuss your options.</p>
 
-Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Letter_Bot_tos.html" target="_blank">Letter Bot Terms of Service</a>?
+Q(terms): Do you agree to the <a href="https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBotToS.html" target="_blank">Letter Bot Terms of Service</a>?
 A: Yes
 	Q(1.1):GOTO:privacy
 A: No
@@ -154,28 +147,23 @@ Thank you for your cooperation in this matter.
 
 Q(didthatwork): Did it work?
 A: Yes
-	Q(10.1): Great. Thank you or using HOME line! GOTO:anythingelse
+	Q(10.1): Great. Thank you or using LetterBot! GOTO:anythingelse
 A: No
 	Q(10.2): Try one of the other options. GOTO:how
 
 Q(anythingelse): What would you like to do?
-A: Talk to a live person at HOME Line.
-	Q(11.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:end
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney.
-	Q(11.2):GOTO:end
-A: Revisit my earlier options.
-	Q(11.3):GOTO:how
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/Letterbotstart.html]: Fill out another letter.
-	Q(11.4):GOTO:anythingelse
+A: Revisit my previous options.
+	Q(11.1):GOTO:how
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBot.txt]: Fill out another letter.
+	Q(11.2):GOTO:anythingelse
+A: Thank you, I'm done.
+	Q(11.3):GOTO:end
 
-Q(end): Thank you for using HOME Line! GOTO:anythingelse
+Q(end): Thank you for using LetterBot! GOTO:anythingelse
 
 Q(canthelp): Given your answer we can't help you at this time. [http://suffolklitlab.org/template_docxs/QnA_HTMLs/LetterBotstart.html][ http://suffolklitlab.org/template_docxs/Letter_Bot_tos.html]   GOTO:otheroptions
 
 Q(otheroptions):What would you like to do?
-A: Talk to a live person at HOME Line.
-	Q(14.1): You can call <a href="tel:612-728-5767">612-728-5767</a> or <a href="tel:866-866-3546">866-866-3546</a> for FREE legal help. GOTO:otheroptions
-A:[https://homelinemn.org/e-mail-an-attorney/] Email a HOME Line attorney. If you download or email the form, your answers will be sent encrypted over the internet and recorded by Homeline. Homeline does not track your answers and they will be saved on your device. 
-
-	Q(14.2):GOTO:otheroptions
-A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]: Fill out another letter.
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBot.txt]: Fill out another letter.
+A: Thank you, I'm done.
+	Q(14.2):GOTO:end
