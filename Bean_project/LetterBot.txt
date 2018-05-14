@@ -55,7 +55,7 @@ a.menu {
 
 Q(where):Where do you live?
 A[https://suffolklitlab.github.io/template_docxs/QnA_HTMLs/LetterBotstart.html]:Minnesota
-A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBot.txt]:Massachusetts
+A[https://www.qnamarkup.net/i/?source=https://suffolklitlab.github.io/template_docxs/Bean_project/LetterBotstart.txt]:Massachusetts
 A:New Hampshire
 	Q(1.3): Still under development. GOTO:where
 A:None of these.
